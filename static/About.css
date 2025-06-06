@@ -1,0 +1,260 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: border-box;
+    color: rgb(255, 255, 255);
+}
+h4{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    font-size: 25px;
+}
+body{
+    /*background: linear-gradient(to bottom, rgb(255, 255, 255), rgb(0, 0, 0));*/
+    background-color: rgb(3, 3, 3);
+}
+.navbar{
+    height: 65px;
+    width: 100%;
+    /* background: linear-gradient(to bottom, #000000, transparent); */
+    background-color: black;
+    display: flex;
+    position: fixed;
+    z-index: 1000;
+}
+.nav-logo{
+    height: 60px;
+    width: 115px;
+    margin-top: 15px;
+    margin-left: 50px;
+}
+#logo{
+    height: 60px;
+    width: 100%;
+    background-image: url("images/Hoichoi-Logo-PNG.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.home{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 23px;
+    margin-left: 8.7%;
+}
+.about{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 23px;
+    margin-left: 8.7%;
+}
+a{
+    text-decoration: none;
+}
+.search_btn{
+    height: 5px;
+    margin-top: 19px;
+    margin-left: 12%;
+}
+#search{
+    height: 5px;
+    background-color: transparent;
+    border-style: none;
+    border-radius: 50%; 
+    margin-left: 300px;
+    cursor: pointer;
+}
+#search img{
+    width: 26px;
+    height: 26px;
+}
+.login{
+    height: 60px;
+    margin-top: 23px;
+    margin-left: 38px;
+}
+#a_login{
+    height: 60px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+}
+.subscribe{
+    height: 35px;
+    width: 150px;
+    margin-top: 15px;
+    margin-left: 45px;
+}
+#sub{
+    height: 100%;
+    width: 100%;
+    background-color: rgb(214, 45, 45);
+    border-style: none;
+    border-radius: 7px;
+    font-size: 18.5px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bolder;
+    cursor: pointer;
+}
+.abouthoichoi{
+    justify-content: center;
+    height: 200px;
+    width: 100%;
+    display: flex;
+}
+.abouthoichoi p{
+    font-size: 18px;
+    text-align: justify;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif
+}
+.first1{
+    padding: 10px;
+    padding-right: 10px;
+    height: 100%;
+    width: 28%;
+    color: azure;
+}
+.first2{
+    padding-right: 10px;
+    height: 100%;
+    width: 28%;
+    color: azure;
+}
+/* ----------------------------------------------FEATURE------------------------------------------------------------- */
+
+.features{
+    /* align-items: center; */
+    height: 200px;
+    width: 65%;
+}
+.features li{
+    font-size: 18px;
+    /* text-align: center; */
+    font-weight: 500;
+    font-family: Arial, Helvetica, sans-serif
+}
+/* ----------------------------------------------RECOMENDATION------------------------------------------------------------- */
+
+.recomendation{
+    height: 200px;
+    width: 65%;
+    justify-content: center;
+}
+
+.recomendation a{
+    text-decoration: none;
+    color: red;
+    font-size: 18px;
+    /* text-align: center; */
+    font-weight: 500;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+#check{
+    text-decoration: none;
+    font-size: 18px;
+    /* text-align: center; */
+    font-weight: 500;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+/* ----------------------------------------------FOOT------------------------------------------------------------- */
+
+.foot{
+    height: 200px;
+    width: 100%;
+    background-color: rgb(27, 27, 27);
+    display: flex;
+}
+P{
+    padding: 35px 20px 0px 60px;
+    color: azure;
+}
+.f_foot{
+    height: 100%;
+    width: 30%;
+    justify-content: center;
+}
+.logo2{
+    height: 50px;
+    width: 50%;
+    margin-top: 50px;
+    margin-left: 100px;
+    background-image: url("images/Hoichoi-Logo-b&w-PNG.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    
+}
+.debtulya{
+    height: 50px;
+    width: 50%;
+    margin-left: 75px;
+    margin-top: 20px;
+}
+#name_f{
+    font-size: 27px;
+    font-weight: bold;
+    font-family: sans-serif;
+    padding-left: 50px;
+    padding-top: 35px;
+}
+.s_foot{
+    height: 100%;
+    width: 20%;
+}
+.develop1{
+    height: 100%;
+    width: 100%;
+}
+#dev{
+    font-size: 20px;
+    font-weight: bold;
+    
+}
+#name_d{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.t_foot{
+    height: 100%;
+    width: 20%;
+}
+.lang1{
+    color: azure;
+    height: 50%;
+    width: 100%;
+    margin-left: 76px;
+    margin-top: 40px;
+}
+#lang_f{
+    
+    font-size: 20px;
+    font-weight: bold;
+}
+#bullets{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.ft_foot{
+    height: 100%;
+    width: 20%;
+}
+#contact_f{
+    
+    font-size: 20px;
+    font-weight: bold;
+}
+.con1{
+    color: azure;
+    height: 50%;
+    width: 100%;
+    margin-left: 76px;
+    margin-top: 40px;
+}
+#bullets1{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.extra{
+    height: 60px;
+    width: 100%;
+}

@@ -1,0 +1,290 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: border-box;
+    color: rgb(255, 255, 255);
+}
+body{
+    background-color: #060707;
+}
+/* Header---------------------------------------------------------------------------------------------------- */
+.navbar{
+    height: 65px;
+    width: 100%;
+    background: linear-gradient(to bottom, #000000, transparent);
+    display: flex;
+    position: fixed;
+    z-index: 1000;
+}
+
+.nav-logo{
+    height: 60px;
+    width: 115px;
+    margin-top: 15px;
+    margin-left: 50px;
+}
+#logo{
+    height: 60px;
+    width: 100%;
+    background-image: url("images/Hoichoi-Logo-PNG.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.home{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 23px;
+    margin-left: 8.7%;
+}
+.about{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 23px;
+    margin-left: 8.7%;
+}
+a{
+    text-decoration: none;
+}
+.search_btn{
+    height: 5px;
+    margin-top: 19px;
+    margin-left: 12%;
+}
+#search{
+    height: 5px;
+    background-color: transparent;
+    border-style: none;
+    border-radius: 50%; 
+    margin-left: 300px;
+    cursor: pointer;
+}
+#search img{
+    width: 26px;
+    height: 26px;
+}
+.login{
+    height: 60px;
+    margin-top: 23px;
+    margin-left: 38px;
+}
+#a_login{
+    height: 60px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+}
+.subscribe{
+    height: 35px;
+    width: 150px;
+    margin-top: 15px;
+    margin-left: 45px;
+}
+#sub{
+    height: 100%;
+    width: 100%;
+    background-color: rgb(214, 45, 45);
+    border-style: none;
+    border-radius: 7px;
+    font-size: 18.5px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bolder;
+    cursor: pointer;
+}
+.imgdiv{
+    height: 390px;
+    width: auto;
+}
+.image{
+    height: 100%;
+    width: 100%;
+    background-image: url("images/byomkesh.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.left{
+    height: 65px;
+    width: 430px;
+    padding-top: 320px;
+    padding-left: 45px;
+    display: flex;
+}
+#play{
+    height: 50px;
+    width: 35%;
+    border-style: none;
+    border-radius: 7px;
+    background-color: rgb(235, 20, 20);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 17px;
+    cursor: pointer;
+}
+#play:hover{
+    background-color: rgba(241, 57, 57, 1);
+}
+#add-to-list{
+    height: 50px;
+    width: 12.5%;
+    border-radius: 7px;
+    border-style: none;
+    background-color: #060707;
+    cursor: pointer;
+    transition: all 0.35s linear 0s;
+}
+#add-to-list:hover{
+    border-radius: 20px;
+    transform: rotate(90deg);
+    
+}
+#add-to-list img{
+    height: 50%;
+    border-radius: 7px;
+}
+#a-t-l:hover{
+    transform: rotate(90deg);
+}
+.left button{
+    margin-right: 50px;
+}
+#sub:hover{
+    background-color: rgba(241, 57, 57, 1);
+}
+.navbar a:hover{
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* ---------------------------------------------> Styling of content shows or movies buttons & images */
+.f_1{
+    height: 40px;
+    width: auto;
+    background-color: transparent;
+}
+#Just-Added{
+    font-size: 28px;
+    font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;
+    font-weight: 550;
+    color: rgb(245, 241, 241);
+    padding: 50px 0px 15px 20px;
+    background-color: transparent;
+}
+.items{
+    height: 275px;
+    width: 100%;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-evenly;
+}
+.items button{
+    height: 95%;
+    width: 13%;
+    background: none;
+    border-radius: 12px;
+    cursor: pointer;
+    border-style: none;
+}
+.items button img{
+    width: 100%;
+    height: 100%;
+    transition: all 0.35s linear 0.5s;
+}
+.img1{
+    border-radius: 12px;
+}
+.items button img:hover{
+    /* z-index: 200; */
+    transform: scale(1.3);
+}
+
+/* ------------------------------------------------> Footer - Styling */
+.foot{
+    height: 200px;
+    width: auto;
+    background-color: rgb(27, 27, 27);
+    display: flex;
+}
+P{
+    padding: 35px 20px 0px 60px;
+}
+.f_foot{
+    height: 100%;
+    width: 30%;
+    justify-content: center;
+}
+.logo2{
+    height: 50px;
+    width: 50%;
+    margin-top: 50px;
+    margin-left: 100px;
+    background-image: url("images/Hoichoi-Logo-b&w-PNG.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    
+}
+.debtulya{
+    height: 50px;
+    width: 50%;
+    margin-left: 75px;
+    margin-top: 20px;
+}
+#name_f{
+    font-size: 27px;
+    font-weight: bold;
+    font-family: sans-serif;
+    padding-left: 50px;
+    padding-top: 35px;
+}
+.s_foot{
+    height: 100%;
+    width: 20%;
+}
+.develop1{
+    height: 100%;
+    width: 100%;
+}
+#dev{
+    font-size: 20px;
+    font-weight: bold;
+}
+#name_d{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.t_foot{
+    height: 100%;
+    width: 20%;
+}
+.lang1{
+    height: 50%;
+    width: 100%;
+    margin-left: 76px;
+    margin-top: 40px;
+}
+#lang_f{
+    font-size: 20px;
+    font-weight: bold;
+}
+#bullets{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.ft_foot{
+    height: 100%;
+    width: 20%;
+}
+#contact_f{
+    font-size: 20px;
+    font-weight: bold;
+}
+.con1{
+    height: 50%;
+    width: 100%;
+    margin-left: 76px;
+    margin-top: 40px;
+}
+#bullets1{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.extra{
+    height: 60px;
+    width: 100%;
+}
