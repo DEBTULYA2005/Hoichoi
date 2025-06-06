@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About - hoichoi</title>
-    <link rel="stylesheet" href="About.css">
-    <link rel="icon" href="images/Hoichoi-logo2.png" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'About.css' %}">
+    <link rel="icon" href="{% static 'images/Hoichoi-logo2.png' %}" type="image/x-icon">
 </head>
 <body>
     <header>
@@ -14,14 +15,14 @@
                 <div id="logo"></div>
             </div>
             <div class="home">
-                <a href="index.html">Home</a>
+                <a href="{% url 'index' %}">Home</a>
             </div>
             <div class="about">
-                <a href="About.html">About</a>
+                <a href="{% url 'About' %}">About</a>
             </div>
             <div class="search_btn">
                 <button id="search">
-                    <img src="images/search_icon.png" alt="Search" id="s">
+                    <img src="{% static 'images/search_icon.png' %}" alt="Search" id="s">
                 </button>
             </div>
             <div class="login">
@@ -70,7 +71,7 @@
         <div class="recomendation">
             <p id="check">You also click here <a href="https://www.hoichoi.tv/">Original Hoichoi</a> to check-out the Website i am inspired from.</p>
         </div>
-    </center>
+    </center> 
 
 <br><br>
 

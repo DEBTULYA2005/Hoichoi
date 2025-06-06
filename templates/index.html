@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>hoichoi - Watch Bengali Movies & Web Series</title>
-    <link rel="stylesheet" href="index.css">
-    <link rel="icon" href="images/Hoichoi-logo2.png" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+    <link rel="icon" href="{% static 'images/Hoichoi-logo2.png' %}" type="image/x-icon">
 </head>
 <body>
     <header>
@@ -14,14 +15,14 @@
                 <div id="logo"></div>
             </div>
             <div class="home">
-                <a href="index.html">Home</a>
+                <a href="{% url 'index' %}">Home</a>
             </div>
             <div class="about">
-                <a href="About.html">About</a>
+                <a href="{% url 'About' %}">About</a>
             </div>
             <div class="search_btn">
                 <button id="search">
-                    <img src="images/search_icon.png" alt="Search" id="s">
+                    <img src="{% static 'images/search_icon.png' %}" alt="Search" id="s">
                 </button>
             </div>
             <div class="login">
@@ -36,7 +37,7 @@
         <div class="image">
             <div class="left">
                 <button id="play">PLAY NOW</button>
-                <button id="add-to-list"><img src="images/Picsart_24-09-11_22-48-11-638.png" alt="add" id="a-t-l"></button>
+                <button id="add-to-list"><img src="{% static 'images/Picsart_24-09-11_22-48-11-638.png' %}" alt="add" id="a-t-l"></button>
             </div>
         </div>
     </div>
@@ -45,25 +46,25 @@
     </div>
     <br><br><br>
     <div class="items">
-        <button><img src="images/montu-pilot.jfif" alt="Search" class="img1"></button>
-        <button><img src="images/Mandaar.jpg" alt="Search" class="img1"></button>
-        <button><img src="images/Khaadan.jpg" alt="Search" class="img1"></button>
-        <button><img src="images/Byomkesh_h.jpg" alt="Search" class="img1"></button>
-        <button><img src="images/dugdugi.jfif" alt="Search" class="img1"></button>
-        <button><img src="images/bodhon" alt="Search" class="img1"></button>
-        <button><img src="images/TBS_h.jpg" alt="Search" class="img1"></button>
+        <button><img src="{% static 'images/montu-pilot.jfif' %}" alt="Search" class="img1"></button>
+        <button><img src="{% static 'images/Mandaar.jpg' %}" alt="Search" class="img1"></button>
+        <button><img src="{% static 'images/Khaadan.jpg' %}" alt="Search" class="img1"></button>
+        <button><img src="{% static 'images/Byomkesh_h.jpg' %}" alt="Search" class="img1"></button>
+        <button><img src="{% static 'images/dugdugi.jfif' %}" alt="Search" class="img1"></button>
+        <button><img src="{% static 'images/bodhon' %}" alt="Search" class="img1"></button>
+        <button><img src="{% static 'images/TBS_h.jpg' %}" alt="Search" class="img1"></button>
     </div>
     <div class="f_2">
         <p id="Just-Added">Watch For Free</p>
     </div>
     <div class="items">
-        <button><img src="images/bodhon" alt="Search" class="img1"></button>
-        <button><img src="images/Byomkesh_h.jpg" alt="Search" class="img1"></button>
-        <button><img src="images/Mandaar.jpg" alt="Search" class="img1"></button>
-        <button><img src="images/RoRS.jfif" alt="Search" class="img1"></button>
-        <button><img src="images/montu-pilot.jfif" alt="Search" class="img1"></button>
-        <button><img src="images/dugdugi.jfif" alt="Search" class="img1"></button>
-        <button><img src="images/Khaadan.jpg" alt="Search" class="img1"></button>
+        <button><img src="{% static 'images/bodhon' %}" alt="Search" class="img1"></button>
+        <button><img src="{% static 'images/Byomkesh_h.jpg' %}" alt="Search" class="img1"></button>
+        <button><img src="{% static 'images/Mandaar.jpg' %}" alt="Search" class="img1"></button>
+        <button><img src="{% static 'images/RoRS.jfif' %}" alt="Search" class="img1"></button>
+        <button><img src="{% static 'images/montu-pilot.jfif' %}" alt="Search" class="img1"></button>
+        <button><img src="{% static 'images/dugdugi.jfif' %}" alt="Search" class="img1"></button>
+        <button><img src="{% static 'images/Khaadan.jpg' %}" alt="Search" class="img1"></button>
     </div>
     <div class="extra"></div>
     <footer>
