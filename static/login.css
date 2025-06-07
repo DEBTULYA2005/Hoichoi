@@ -1,0 +1,151 @@
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #121212;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .modal {
+    background-color: #1e1e1e;
+    padding: 40px 30px;
+    border-radius: 12px;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    position: relative;
+  }
+
+  .modal h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 20px;
+    color: #aaa;
+    cursor: pointer;
+  }
+
+  .input-group {
+    display: flex;
+    margin-bottom: 10px;
+  }
+
+  .input-group select,
+  .input-group input {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    background: #2e2e2e;
+    color: white;
+  }
+
+  .input-group select {
+    width: 25%;
+    border-right: 1px solid #444;
+    border-radius: 6px;
+  }
+
+  .input-group input {
+    width: 75%;
+    border-radius: 6px;
+  }
+
+  .terms {
+    font-size: 12px;
+    color: #aaa;
+    margin: 10px 0;
+  }
+
+  .terms a {
+    color: #dc6f6f;
+    text-decoration: none;
+  }
+
+  .divider {
+    text-align: center;
+    margin: 20px 0;
+    position: relative;
+  }
+
+  .divider::before,
+  .divider::after {
+    content: "";
+    height: 1px;
+    width: 40%;
+    background: #333;
+    position: absolute;
+    top: 50%;
+  }
+
+  .divider::before {
+    left: 0;
+  }
+
+  .divider::after {
+    right: 0;
+  }
+
+  .divider span {
+    background: #1e1e1e;
+    padding: 0 10px;
+    color: #aaa;
+  }
+
+  .social-icons {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+  }
+
+  .social-icons a {
+    /* background: #2e2e2e; */
+    padding: 10px;
+    border-radius: 50%;
+    text-decoration: none;
+    color: rgb(252, 181, 181);
+    /* font-size: 20px; */
+    cursor: pointer;
+  }
+
+  .help {
+    text-align: center;
+    font-size: 13px;
+  }
+
+  .help a {
+    color: #dc6f6f;
+    text-decoration: none;
+  }
+  
+  /* #login_form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  } */
+
+  #login_form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #dc6f6f;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+  }
+
+  #login_form button:hover {
+    background-color: #c95858;
+  }
+
+  

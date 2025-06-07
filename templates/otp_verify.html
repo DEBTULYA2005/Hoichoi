@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>OTP Verification</title>
+  <link rel="stylesheet" href="{% static 'otp_verify.css' %}">
+</head>
+<body>
+  <div class="modal">
+    <h2>Login or signup to hoichoi</h2>
+    <p>&larr; Enter OTP sent to <a id="phoneoremail">{{ phoneoremail }}</a></p>
+    <form action="{% url 'otp_verify' %}" method="POST">
+        {% csrf_token %}
+        <div class="otp-box">
+          <input type="text" maxlength="1" required oninput="moveNext(this, 'otp2')" id="otp1">
+          <input type="text" maxlength="1" required oninput="moveNext(this, 'otp3')" id="otp2">
+          <input type="text" maxlength="1" required oninput="moveNext(this, 'otp4')" id="otp3">
+          <input type="text" maxlength="1" required oninput="moveNext(this, null)" id="otp4">
+        </div>
+  
+        <!-- Hidden input for full OTP -->
+        <input type="hidden" name="otp" id="otp">
+  
+        <button type="submit" class="submit-btn" onclick="combineOTP()">Submit OTP</button>
+    </form>
+    <div class="resend">
+      Resend OTP <span id="timer">23 sec</span>
+    </div>
+    <div class="help">
+      Trouble Signing in? <a href="#">Get Help</a>
+    </div>
+  </div>
+
+  <script>
+    function moveNext(current, nextId) {
+        if (current.value.length === 1 && nextId) {
+          document.getElementById(nextId).focus();
+        }
+      }
+  
+      function combineOTP() {
+        const otp = 
+          document.getElementById('otp1').value +
+          document.getElementById('otp2').value +
+          document.getElementById('otp3').value +
+          document.getElementById('otp4').value;
+
+        document.getElementById('otp').value = otp;
+      }
+  
+      // Timer countdown
+      let timeLeft = 23;
+      const timerSpan = document.getElementById('timer');
+      const interval = setInterval(() => {
+        timeLeft--;
+        timerSpan.textContent = `${timeLeft} sec`;
+        if (timeLeft <= 0) clearInterval(interval);
+      }, 1000);
+  </script>
+</body>
+</html>

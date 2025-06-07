@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'login.css' %}">
+</head>
+<body>
+    
+    <div class="modal">
+        <div class="close-btn" onclick="window.location.href = '{% url 'index' %}'">&times;</div>
+        <h2>Login or signup to hoichoi</h2>
+        <form action="{% url 'login' %}" method="post" id="login_form">
+            {% csrf_token %}
+            <div class="input-group">
+            <select>
+                <option value="Email">Email</option>
+                <option value="Phone">Phone</option>
+                <!-- Add more as needed -->
+            </select>
+            <input type="text" name="phoneoremail" placeholder="Enter mobile number or Email ID">
+            </div>
+            <button type="submit">Send OTP</button>
+        </form>
+        <div class="terms">
+          By proceeding you confirm you are above 18 years of age and agree to our
+          <a href="#">Terms of Service</a> &amp; <a href="#">Privacy Policy</a>.
+        </div>
+      
+        <div class="divider"><span>or continue with</span></div>
+      
+        <div class="social-icons">
+          <a href="#"><img src="https://img.icons8.com/color/48/facebook-new.png" alt="Facebook" width="24" height="24"></a>
+          <a href="#"><img src="https://img.icons8.com/color/48/google-logo.png" alt="Google" width="24" height="24"></a>
+          <a href="#"><img src="https://img.icons8.com/ios-filled/50/mac-os.png" alt="Apple" width="24" height="24"></a>
+          <a href="#"><img src="https://img.icons8.com/ios-glyphs/30/email.png" alt="Email" width="24" height="24"></a>
+        </div>
+      
+        <div class="help">
+          Trouble Signing in? <a href="#">Get Help</a>
+        </div>
+      </div>
+</body>
+</html>
