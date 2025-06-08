@@ -61,13 +61,13 @@ def otp_verify(request):
                         if User.objects.filter(emailorphone=phoneoremail).exists():
                             massage = f'{phoneoremail} successfully logged in !'
                            
-                            return render(request, 'index.html', {'massage':massage}, {'alert_flag': True})
+                            return render(request, 'index.html', {'massage':1}, {'alert_flag': True})
                         else:
                             user = User(emailorphone=phoneoremail)
                             user.save()
                             massage = f'{phoneoremail} successfully created !'
                            
-                            return render(request, 'index.html', {'massage':massage}, {'alert_flag': True})
+                            return render(request, 'index.html', {'massage':2}, {'alert_flag': True})
                     except Exception as e:
                         return HttpResponse(str(e))
                 else:

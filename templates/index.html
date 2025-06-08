@@ -106,10 +106,16 @@
             </div>
         </div>
     </footer>
-    {% if massage %}
+    {% if massage == 1 %}
         {% if alert_flag %}
             <script>
-                alert("{{ massage }}");
+                alert("Successfully logged in!");
+            </script>
+        {% endif %}
+    {% elif massage == 2 %}
+        {% if alert_flag %}
+            <script>
+                alert("Successfully created!");
             </script>
         {% endif %}
     {% endif %}
