@@ -7,7 +7,7 @@ from .models import User
 # Create your views here.
 
 def generate_random_string(length=10):
-    characters = string.ascii_letters + string.digits  # a-zA-Z0-9
+    characters = string.ascii_letters + string.digits  # a-zA-Z0-9 
     return ''.join(random.choices(characters, k=length))
 
 def index(request):
