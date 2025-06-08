@@ -51,7 +51,7 @@ def otp_verify(request):
     try:
         if request.method == 'POST':
             phoneoremail = request.POST.get('phoneoremail')
-            
+            return HttpResponse(str(phoneoremail))
             if phoneoremail:
                 otp = request.POST.get('otp')
                 print(otp)
