@@ -7,4 +7,5 @@ urlpatterns = [
     path('About', views.about, name='About'),
     path('login', views.login, name='login'),
     path('otp_verify', views.otp_verify, name='otp_verify'),
+    path('run_migrations', views.run_migrations, name='run_migrations'),
 ]

@@ -4,11 +4,19 @@ import string
 from django.core.mail import send_mail
 from django.conf import settings
 from .models import User
+from django.core.management import call_command
+import os
 # Create your views here.
 
 def generate_random_string(length=10):
     characters = string.ascii_letters + string.digits  # a-zA-Z0-9 
     return ''.join(random.choices(characters, k=length))
+
+def run_migrations(request):
+    if os.environ.get("RENDER") == "true":  # Optional safety check
+        call_command('migrate')
+        return HttpResponse("Migrations applied!")
+    return HttpResponse("Not allowed", status=403)
 
 def index(request):
     return render(request, 'index.html')
