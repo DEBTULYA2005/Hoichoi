@@ -48,24 +48,28 @@ def login(request):
     return render(request, 'login.html')
 
 def otp_verify(request):
-    if request.method == 'POST':
-        phoneoremail = request.POST.get('phoneoremail')
-        if phoneoremail:
-            otp = request.POST.get('otp')
-            print(otp)
-            if otp == request.session.get('otp'):
-                try:
-                    if User.objects.filter(emailorphone=phoneoremail).exists():
-                        massage = f'{phoneoremail} successfully logged in !'
-                        return render(request, 'index.html', {'massages': massage})
-                    else:
-                        user = User(emailorphone=phoneoremail)
-                        user.save()
-                        return redirect('index')
-                except Exception as e:
-                    return HttpResponse(str(e))
+    try:
+        if request.method == 'POST':
+            phoneoremail = request.POST.get('phoneoremail')
+            
+            if phoneoremail:
+                otp = request.POST.get('otp')
+                print(otp)
+                if otp == request.session.get('otp'):
+                    try:
+                        if User.objects.filter(emailorphone=phoneoremail).exists():
+                            massage = f'{phoneoremail} successfully logged in !'
+                            return render(request, 'index.html', {'massages': massage})
+                        else:
+                            user = User(emailorphone=phoneoremail)
+                            user.save()
+                            return redirect('index')
+                    except Exception as e:
+                        return HttpResponse(str(e))
+                else:
+                    return HttpResponse("Invalid OTP!")
             else:
-                return HttpResponse("Invalid OTP!")
-        else:
-            return render(request, 'login.html')
-    return render(request, 'otp_verify.html') 
+                return render(request, 'login.html')
+        return render(request, 'otp_verify.html') 
+    except Exception as e:
+        return HttpResponse(str(e))
