@@ -3,6 +3,7 @@ import random
 import string
 from django.core.mail import send_mail
 from django.conf import settings
+from .models import User
 # Create your views here.
 
 def generate_random_string(length=10):
@@ -12,7 +13,7 @@ def generate_random_string(length=10):
 def index(request):
     return render(request, 'index.html')
 
-def about(request):
+def about(request): 
     return render(request, 'About.html')
 
 def login(request):
@@ -41,7 +42,14 @@ def otp_verify(request):
             otp = request.POST.get('otp')
             print(otp)
             if otp == request.session.get('otp'):
-                return redirect('index')
+                try:
+                    if User.objects.filter(email=request.session.get('phoneoremail')).exists():
+                        return HttpResponse("User already exists!")
+                    else:
+                        user = User.objects.create_user(email=request.session.get('phoneoremail'), phone=request.session.get('phoneoremail'))
+                        return redirect('index')
+                except Exception as e:
+                    return HttpResponse(str(e))
             else:
                 return HttpResponse("Invalid OTP!")
         else:
