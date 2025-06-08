@@ -6,6 +6,7 @@ from django.conf import settings
 from .models import User
 from django.core.management import call_command
 import os
+from django.contrib import messages
 # Create your views here.
 
 def generate_random_string(length=10):
@@ -59,11 +60,14 @@ def otp_verify(request):
                     try:
                         if User.objects.filter(emailorphone=phoneoremail).exists():
                             massage = f'{phoneoremail} successfully logged in !'
-                            return render(request, 'index.html', {'massages': massage})
+                           
+                            return render(request, 'index.html', {'massage':massage}, {'alert_flag': True})
                         else:
                             user = User(emailorphone=phoneoremail)
                             user.save()
-                            return redirect('index')
+                            massage = f'{phoneoremail} successfully created !'
+                           
+                            return render(request, 'index.html', {'massage':massage}, {'alert_flag': True})
                     except Exception as e:
                         return HttpResponse(str(e))
                 else:
