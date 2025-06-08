@@ -55,7 +55,8 @@ def otp_verify(request):
             if otp == request.session.get('otp'):
                 try:
                     if User.objects.filter(emailorphone=request.session.get('phoneoremail')).exists():
-                        return HttpResponse("User already exists!")
+                        massage = f'{request.session.get('phoneoremail')} successfully logged in !'
+                        return render(request, 'index.html', {'massages': massage})
                     else:
                         user = User(emailorphone=request.session.get('phoneoremail'))
                         user.save()
