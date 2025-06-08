@@ -49,16 +49,17 @@ def login(request):
 
 def otp_verify(request):
     if request.method == 'POST':
-        if request.session.get('phoneoremail'):
+        phoneoremail = request.POST.get('phoneoremail')
+        if phoneoremail:
             otp = request.POST.get('otp')
             print(otp)
             if otp == request.session.get('otp'):
                 try:
-                    if User.objects.filter(emailorphone=request.session.get('phoneoremail')).exists():
-                        massage = f'{request.session.get('phoneoremail')} successfully logged in !'
+                    if User.objects.filter(emailorphone=phoneoremail).exists():
+                        massage = f'{phoneoremail} successfully logged in !'
                         return render(request, 'index.html', {'massages': massage})
                     else:
-                        user = User(emailorphone=request.session.get('phoneoremail'))
+                        user = User(emailorphone=phoneoremail)
                         user.save()
                         return redirect('index')
                 except Exception as e:
