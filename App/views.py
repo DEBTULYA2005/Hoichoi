@@ -13,9 +13,12 @@ def generate_random_string(length=10):
     return ''.join(random.choices(characters, k=length))
 
 def run_migrations(request):
-    if os.environ.get("RENDER") == "true":  # Optional safety check
-        call_command('migrate')
-        return HttpResponse("Migrations applied!")
+    try:
+        if os.environ.get("RENDER") == "true":  # Optional safety check
+            call_command('migrate')
+            return HttpResponse("Migrations applied!")
+    except Exception as e:
+        return HttpResponse(str(e))
     return HttpResponse("Not allowed", status=403)
 
 def index(request):
