@@ -67,5 +67,6 @@ def otp_verify(request):
             else:
                 return HttpResponse("Invalid OTP!")
         else:
+            return HttpResponse("Phone number is not available!")
             return render(request, 'login.html')
     return render(request, 'otp_verify.html')
