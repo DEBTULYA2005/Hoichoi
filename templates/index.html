@@ -9,7 +9,7 @@
     <link rel="icon" href="{% static 'images/Hoichoi-logo2.png' %}" type="image/x-icon">
 </head>
 <body>
-
+    
     <header>
         <div class="navbar">
             <div class="nav-logo">
@@ -106,18 +106,5 @@
             </div>
         </div>
     </footer>
-    {% if massage == 1 %}
-        {% if alert_flag %}
-            <script>
-                alert("Successfully logged in!");
-            </script>
-        {% endif %}
-    {% elif massage == 2 %}
-        {% if alert_flag %}
-            <script>
-                alert("Successfully created!");
-            </script>
-        {% endif %}
-    {% endif %}
 </body>
-</html>
+</html> 

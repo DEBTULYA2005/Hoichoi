@@ -35,7 +35,7 @@ def login(request):
             HttpResponse("Phone number is not available!")
         else:
             otp = str(random.randint(1000, 9999))
-            subject = 'Hello from Hoichoi!'
+            subject = 'Hello ' + phoneoremail + ' from Hoichoi!'
             message = f'<#> Here\'s your Hoichoi Verification Code *| {otp} |* Enjoy Streaming now! *massage code={generate_random_string()}*'
             from_email = settings.EMAIL_HOST_USER
             recipient_list = [phoneoremail]
@@ -59,15 +59,23 @@ def otp_verify(request):
                 if otp == request.session.get('otp'):
                     try:
                         if User.objects.filter(emailorphone=phoneoremail).exists():
-                            massage = f'{phoneoremail} successfully logged in !'
-                           
-                            return render(request, 'index.html', {'massage':1}, {'alert_flag': True})
+                            subject = 'Hallo' + phoneoremail + '!'
+                            message = f'You have successfully logged in to Hoichoi'
+                            from_email = settings.EMAIL_HOST_USER
+                            recipient_list = [phoneoremail]
+                            
+                            send_mail(subject, message, from_email, recipient_list)
+                            return render(request, 'index.html')
                         else:
                             user = User(emailorphone=phoneoremail)
                             user.save()
-                            massage = f'{phoneoremail} successfully created !'
-                           
-                            return render(request, 'index.html', {'massage':2}, {'alert_flag': True})
+                            subject = 'Wellcome' + phoneoremail + '!'
+                            message = f'You are now an user of Hoichoi'
+                            from_email = settings.EMAIL_HOST_USER
+                            recipient_list = [phoneoremail]
+                            
+                            send_mail(subject, message, from_email, recipient_list)
+                            return render(request, 'index.html')
                     except Exception as e:
                         return HttpResponse(str(e))
                 else:
