@@ -51,10 +51,10 @@ def otp_verify(request):
             print(otp)
             if otp == request.session.get('otp'):
                 try:
-                    if User.objects.filter(email=request.session.get('phoneoremail')).exists():
+                    if User.objects.filter(emailorphone=request.session.get('phoneoremail')).exists():
                         return HttpResponse("User already exists!")
                     else:
-                        user = User(email=request.session.get('phoneoremail'), phone=request.session.get('phoneoremail'))
+                        user = User(emailorphone=request.session.get('phoneoremail'))
                         user.save()
                         return redirect('index')
                 except Exception as e:
